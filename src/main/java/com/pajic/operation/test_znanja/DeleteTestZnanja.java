@@ -10,8 +10,10 @@ import com.pajic.model.TestZnanja;
 import com.pajic.operation.AbstractGenericOperation;
 
 /**
+ * Predstavlja specificnu operaciju koja brise prosledjeni test znanja iz baze podataka.
  *
- * @author pajic
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class DeleteTestZnanja extends AbstractGenericOperation {
 

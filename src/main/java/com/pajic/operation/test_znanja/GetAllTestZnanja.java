@@ -13,11 +13,18 @@ import java.util.List;
 
 
 /**
+ * Predstavlja specificnu operaciju koja iz baze podataka izvlaci sve testove znanja i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu testova znanja.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class GetAllTestZnanja extends AbstractGenericOperation {
-    
+
+    /**
+     * Lista testova znanja.
+     */
     private List<TestZnanja> testoviZnanja;
     
     @Override
@@ -42,6 +49,10 @@ public class GetAllTestZnanja extends AbstractGenericOperation {
         }
     }
 
+    /**
+     * Vraca listu testova znanja.
+     * @return testoviZnanja - Lista testova znanja.
+     */
     public List<TestZnanja> getTestoviZnanja() {
         return testoviZnanja;
     }

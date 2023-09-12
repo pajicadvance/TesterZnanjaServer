@@ -7,15 +7,24 @@ package com.pajic.main;
 import com.pajic.form.MainFrame;
 
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 /**
+ * Main klasa projekta TesterZnanjaServer.
  *
- * @author Pavle
+ * Sadrzi main metodu.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    /**
+     * Entrypoint serverske aplikacije.
+     *
+     * Inicijalizuje glavnu serversku formu i prikazuje je.
+     *
+     * @param args - Argumenti pri pokretanju aplikacije iz komandne linije (neiskorisceno).
+     */
+    public static void main(String[] args) {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setLocationRelativeTo(null);
         mainFrame.pack();

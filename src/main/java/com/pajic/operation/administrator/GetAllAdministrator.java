@@ -9,13 +9,19 @@ import com.pajic.operation.AbstractGenericOperation;
 
 import java.util.List;
 
-
 /**
+ * Predstavlja specificnu operaciju koja iz baze podataka izvlaci sve administratore i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu administratora.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
+ *
  */
 public class GetAllAdministrator extends AbstractGenericOperation {
-    
+    /**
+     * Lista administratora.
+     */
     private List<Administrator> administratori;
 
     @Override
@@ -27,6 +33,10 @@ public class GetAllAdministrator extends AbstractGenericOperation {
         administratori = repository.getAll((Administrator) param);
     }
 
+    /**
+     * Vraca listu administratora.
+     * @return administratori - Lista administratora.
+     */
     public List<Administrator> getAdministratori() {
         return administratori;
     }

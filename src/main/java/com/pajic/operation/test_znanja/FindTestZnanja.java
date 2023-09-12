@@ -11,17 +11,35 @@ import com.pajic.operation.AbstractGenericOperation;
 
 import java.util.List;
 
-
 /**
+ * Predstavlja specificnu operaciju koja pretrazuje sve testove znanja po datom parametru i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu testova znanja i parametar za pretragu.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class FindTestZnanja extends AbstractGenericOperation {
 
+    /**
+     * Lista testova znanja.
+     */
     private List<TestZnanja> testoviZnanja;
+    /**
+     * Parametar za pretragu.
+     */
     private final String searchParameter;
 
+    /**
+     * Konstruktor koji vraca instancu klase FindTestZnanja sa prosledjenim parametrom za pretragu.
+     * @param searchParameter - Parametar za pretragu.
+     *
+     * @throws NullPointerException - Ukoliko je parametar za pretragu null.
+     */
     public FindTestZnanja(String searchParameter) {
+        if(searchParameter == null)
+            throw new NullPointerException("Parametar za pretragu ne sme biti null.");
+
         this.searchParameter = searchParameter;
     }
     
@@ -42,6 +60,10 @@ public class FindTestZnanja extends AbstractGenericOperation {
         }
     }
 
+    /**
+     * Vraca listu testova znanja.
+     * @return testoviZnanja - Lista testova znanja.
+     */
     public List<TestZnanja> getTestoviZnanja() {
         return testoviZnanja;
     }

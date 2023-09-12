@@ -13,23 +13,47 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Predstavlja menadzera serverskih niti koji inicijalizuje i pokrece novu serversku nit za svakog novog povezanog klijenta.
  *
- * @author Pavle
+ * Sadrzi podatak o soketu, serverski soket, listu trenutno aktivnih serverskih niti i brojac povezanih klijenata.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class ServerThreadManager extends Thread {
-    
+
+    /**
+     * Soket preko koga ce se odvijati komunikacija izmedju servera i klijenta.
+     */
     private Socket socket;
+    /**
+     * Serverski soket koji osluskuje odredjeni port zarad uspostavljanja konekcije sa klijentskim aplikacijama.
+     */
     private final ServerSocket ss;
+    /**
+     * Lista svih trenutno pokrenutih niti.
+     */
     private List<ServerThread> serverThreadList;
+    /**
+     * Brojac povezanih klijenata.
+     */
     private int clientCounter;
-    
+
+    /**
+     * Konstruktor koji inicijalizuje menadzer serverskih niti.
+     * @param ss - Serverski soket.
+     * @param socket - Podatak o soketu.
+     */
     public ServerThreadManager(ServerSocket ss, Socket socket) {
         this.socket = socket;
         this.ss = ss;
         this.serverThreadList = new ArrayList<>();
         this.clientCounter = 0;
     }
-    
+
+    /**
+     * Pokrece nit menadzera serverskih niti. Za svakog povezanog klijenta kreira se nova serverska nit, stavlja se u listu aktivnih serverskih niti, i povecava se brojac povezanih klijenata.
+     */
     @Override
     public void run() {
         System.out.println("[Server Thread Manager] Server thread manager started.");
@@ -51,7 +75,10 @@ public class ServerThreadManager extends Thread {
         }
         stopServers();
     }
-    
+
+    /**
+     * Zaustavlja sve aktivne serverske niti interrupt() pozivom, nakon sto je sam menadzer serverskih niti prekinut interrupt() pozivom.
+     */
     public void stopServers() {
         for (ServerThread s : serverThreadList) if (s.isAlive()) s.interrupt();
         System.out.println("[Server Thread Manager] All threads closed.");

@@ -12,15 +12,34 @@ import com.pajic.operation.administrator.GetAllAdministrator;
 import java.util.List;
 
 /**
+ * Predstavlja specificnu operaciju koja pretrazuje sve urednike po datom parametru i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu urednika i parametar za pretragu.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class FindUrednik extends AbstractGenericOperation {
 
+    /**
+     * Lista urednika.
+     */
     private List<Urednik> urednici;
+    /**
+     * Parametar za pretragu.
+     */
     private final String searchParameter;
 
+    /**
+     * Konstruktor koji vraca instancu klase FindUrednik sa prosledjenim parametrom za pretragu.
+     * @param searchParameter - Parametar za pretragu.
+     *
+     * @throws NullPointerException - Ukoliko je parametar za pretragu null.
+     */
     public FindUrednik(String searchParameter) {
+        if(searchParameter == null)
+            throw new NullPointerException("Parametar za pretragu ne sme biti null.");
+
         this.searchParameter = searchParameter;
     }
 
@@ -40,6 +59,10 @@ public class FindUrednik extends AbstractGenericOperation {
                     u.setAdministrator(a);
     }
 
+    /**
+     * Vraca listu urednika.
+     * @return urednici - Lista urednika.
+     */
     public List<Urednik> getUrednici() {
         return urednici;
     }

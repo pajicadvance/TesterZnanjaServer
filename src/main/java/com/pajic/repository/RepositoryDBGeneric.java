@@ -15,6 +15,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Predstavlja genericku implementaciju repozitorijuma za izvrsavanje operacija nad bazom podataka. Sadrzi metode za dodavanje, brisanje, izmenu, kao i izlistavanje podataka iz baze.
+ *
+ * S obzirom da se radi o generickoj implementaciji metode ove klase ce raditi za bilo koju domensku klasu koja implementira interfejs GenericEntity.
+ *
+ * Implementira interfejs DbRepository pri cemu postavlja tip na GenericEntity.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
+ *
+ */
 public class RepositoryDBGeneric implements DbRepository<GenericEntity> {
 
     @Override

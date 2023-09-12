@@ -10,8 +10,10 @@ import com.pajic.model.TestZnanja;
 import com.pajic.operation.AbstractGenericOperation;
 
 /**
+ * Predstavlja specificnu operaciju koja dodaje test znanja u bazu podataka.
  *
- * @author pajic
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class AddTestZnanja extends AbstractGenericOperation {
 

@@ -9,8 +9,10 @@ import com.pajic.model.Rezultat;
 import com.pajic.operation.AbstractGenericOperation;
 
 /**
+ * Predstavlja specificnu operaciju koja dodaje novi rezultat u bazu podataka.
  *
- * @author pajic
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class AddRezultat extends AbstractGenericOperation {
 

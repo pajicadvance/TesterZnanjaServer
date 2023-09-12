@@ -8,8 +8,10 @@ import com.pajic.model.Urednik;
 import com.pajic.operation.AbstractGenericOperation;
 
 /**
+ * Predstavlja specificnu operaciju koja brise prosledjenog urednika iz baze podataka.
  *
- * @author pajic
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class DeleteUrednik extends AbstractGenericOperation {
 

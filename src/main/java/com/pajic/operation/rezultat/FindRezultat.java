@@ -11,15 +11,34 @@ import java.util.List;
 
 
 /**
+ * Predstavlja specificnu operaciju koja pretrazuje sve rezultate po datom parametru i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu rezultata i parametar za pretragu.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class FindRezultat extends AbstractGenericOperation {
 
+    /**
+     * Lista rezultata.
+     */
     private List<Rezultat> rezultati;
+    /**
+     * Parametar za pretragu.
+     */
     private final String searchParameter;
-    
+
+    /**
+     * Konstruktor koji vraca instancu klase FindRezultat sa prosledjenim parametrom za pretragu.
+     * @param searchParameter - Parametar za pretragu.
+     *
+     * @throws NullPointerException - Ukoliko je parametar za pretragu null.
+     */
     public FindRezultat(String searchParameter) {
+        if(searchParameter == null)
+            throw new NullPointerException("Parametar za pretragu ne sme biti null.");
+
         this.searchParameter = searchParameter;
     }
     
@@ -31,7 +50,11 @@ public class FindRezultat extends AbstractGenericOperation {
     protected void executeOperation(Object param) throws Exception {
         rezultati = repository.findAll((Rezultat) param, searchParameter);
     }
-    
+
+    /**
+     * Vraca listu rezultata.
+     * @return rezultati - Lista rezultata.
+     */
     public List<Rezultat> getRezultati() {
         return rezultati;
     }

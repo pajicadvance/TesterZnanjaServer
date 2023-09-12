@@ -11,11 +11,18 @@ import java.util.List;
 
 
 /**
+ * Predstavlja specificnu operaciju koja iz baze podataka izvlaci sve korisnike i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu korisnika.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class GetAllKorisnik extends AbstractGenericOperation {
 
+    /**
+     * Lista korisnika.
+     */
     private List<Korisnik> korisnici;
 
     @Override
@@ -27,6 +34,10 @@ public class GetAllKorisnik extends AbstractGenericOperation {
         korisnici = repository.getAll((Korisnik) param);
     }
 
+    /**
+     * Vraca listu korisnika.
+     * @return korisnici - Lista korisnika.
+     */
     public List<Korisnik> getKorisnici() {
         return korisnici;
     }

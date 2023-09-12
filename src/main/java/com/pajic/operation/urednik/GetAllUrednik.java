@@ -12,11 +12,18 @@ import com.pajic.operation.administrator.GetAllAdministrator;
 import java.util.List;
 
 /**
+ * Predstavlja specificnu operaciju koja iz baze podataka izvlaci sve urednike i stavlja ih u listu.
  *
- * @author pajic
+ * Sadrzi listu urednika.
+ *
+ * @author Pavle Pajic
+ * @since 1.0.0
  */
 public class GetAllUrednik extends AbstractGenericOperation {
-    
+
+    /**
+     * Lista urednika.
+     */
     private List<Urednik> urednici;
 
     @Override
@@ -34,6 +41,10 @@ public class GetAllUrednik extends AbstractGenericOperation {
                     u.setAdministrator(a);
     }
 
+    /**
+     * Vraca listu urednika.
+     * @return urednici - Lista urednika.
+     */
     public List<Urednik> getUrednici() {
         return urednici;
     }
