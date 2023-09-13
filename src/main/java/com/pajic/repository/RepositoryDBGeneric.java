@@ -55,7 +55,7 @@ public class RepositoryDBGeneric implements DbRepository<GenericEntity> {
         
         Connection connection = DbConnection.getInstance().getConnection();
         String query = "SELECT * FROM " + param.getTableName();
-        System.out.println("Executing Query: " + query);
+        System.out.println("[SQL Query Debug] Executing Query: " + query);
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(query);
         
@@ -75,7 +75,7 @@ public class RepositoryDBGeneric implements DbRepository<GenericEntity> {
         
         Connection connection = DbConnection.getInstance().getConnection();
         String query = "SELECT * FROM " + param.getTableName() + " WHERE " + param.getWhereFilteredCondition() + id;
-        System.out.println("Executing Query: " + query);
+        System.out.println("[SQL Query Debug] Executing Query: " + query);
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(query);
         
@@ -94,8 +94,7 @@ public class RepositoryDBGeneric implements DbRepository<GenericEntity> {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
             String query = "UPDATE " + param.getTableName() + " SET " + param.getUpdateValues() + " WHERE " + param.getWhereCondition();
-            System.out.println("Executing Query: " + query);
-            System.out.println(query);
+            System.out.println("[SQL Query Debug] Executing Query: " + query);
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
             statement.close();
@@ -109,8 +108,7 @@ public class RepositoryDBGeneric implements DbRepository<GenericEntity> {
         try {
             Connection connection = DbConnection.getInstance().getConnection();
             String query = "DELETE FROM " + param.getTableName() + " WHERE " + param.getWhereCondition();
-            System.out.println("Executing Query: " + query);
-            System.out.println(query);
+            System.out.println("[SQL Query Debug] Executing Query: " + query);
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
             statement.close();
@@ -125,7 +123,7 @@ public class RepositoryDBGeneric implements DbRepository<GenericEntity> {
         
         Connection connection = DbConnection.getInstance().getConnection();
         String query = "SELECT * FROM " + param.getTableName() + searchParameter;
-        System.out.println("Executing Query: " + query);
+        System.out.println("[SQL Query Debug] Executing Query: " + query);
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(query);
         

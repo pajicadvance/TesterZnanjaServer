@@ -7,6 +7,7 @@ package com.pajic.operation.test_znanja;
 import com.pajic.model.Odgovor;
 import com.pajic.model.Pitanje;
 import com.pajic.model.TestZnanja;
+import com.pajic.model.TipTestaZnanja;
 import com.pajic.operation.AbstractGenericOperation;
 
 import java.util.List;
@@ -46,6 +47,12 @@ public class GetAllTestZnanja extends AbstractGenericOperation {
                 p.setListaOdgovora(odgovori);
             }
             tz.setListaPitanja(pitanja);
+            List<TipTestaZnanja> tipovi = repository.getAll(new TipTestaZnanja());
+            for (TipTestaZnanja t : tipovi) {
+                if (t.getId() == tz.getTipTestaZnanja().getId()) {
+                    tz.setTipTestaZnanja(t);
+                }
+            }
         }
     }
 
